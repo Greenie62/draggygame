@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Express Drag-game</title>
+</head>
+<body>
+    <h1>Basic Puzzle Game</h1>
+    <h2>Score:<span class='score'></span></h2>
+    <div class="correctBars">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </div>
+    <h3>Timer:<span class='timer'></span></h3>
+    <div class="dynamite">
+        <div class="dynoBar"></div>
+    </div>
+    <h4 class="dialogue"></h4>
+    <div class="puzzleBoard">
+        <div data-shape='square' class="puzzle puzzle1 square"></div>
+        <div data-shape='circle' class="puzzle puzzle2 circle"></div>
+        <div data-shape='rectangle' class="puzzle puzzle3 rectangle"></div>
+    </div>
+
+    <div class="piecesArea">
+        <div data-color='orange' draggable="true" data-shape='circle' class="piece piece1 circle"></div>
+        <div data-color='blue' draggable="true" data-shape='rectangle' class="piece piece2 rectangle"></div>
+        <div data-color='yellow' draggable="true" data-shape='square' class="piece piece3 square"></div>
+    </div>
+
+
+    <p>Footer&copy;</p>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
