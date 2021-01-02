@@ -1,9 +1,14 @@
 var pieces = document.querySelectorAll(".piece");
 var puzzleSlots = document.querySelectorAll(".puzzle");
+var puzzleBoard = document.querySelector(".puzzleBoard");
 var scoreDOM = document.querySelector(".score")
 var timerDOM = document.querySelector(".timer")
 var dialogueDOM=document.querySelector(".dialogue");
-var bars = document.querySelectorAll('.bar')
+var bars = document.querySelectorAll('.bar');
+
+var playSpan = document.querySelector(".playSpan")
+var playTimerBtn = document.querySelector(".playTimerBtn")
+var noTimerBtn = document.querySelector(".noTimerBtn")
 
 var dynoBar = document.querySelector(".dynoBar");
 var dynamite = document.querySelector(".dynamite");
@@ -79,6 +84,7 @@ function dragDrop(e){
         console.log("you stink!!")
         flashDialogue('failure')
         score-=10;
+        resetBoard()
         currentPiece.style.backgroundColor=currentColor
     }
     console.log("onDrop()")
@@ -132,4 +138,45 @@ function countDown(){
     }
 }
 
- countDown()
+//   countDown()
+
+
+function resetBoard(){
+    console.log('reset game!')
+    console.log(puzzleBoard)
+     puzzleBoard.innerHTML = ""
+  if(Math.random() < .3){
+        puzzleBoard.appendChild(puzzleSlots[2])
+        puzzleBoard.appendChild(puzzleSlots[0])
+        puzzleBoard.appendChild(puzzleSlots[1])
+     }
+  else if(Math.random() > .3 && Math.random() < .6){
+    puzzleBoard.appendChild(puzzleSlots[1])
+    puzzleBoard.appendChild(puzzleSlots[2])
+    puzzleBoard.appendChild(puzzleSlots[0])
+  }
+  else{
+    puzzleBoard.appendChild(puzzleSlots[0])
+    puzzleBoard.appendChild(puzzleSlots[1])
+    puzzleBoard.appendChild(puzzleSlots[2])
+  }
+}
+
+// resetBoard()
+
+
+playTimerBtn.onclick=()=>{
+    countDown()
+    dialogueDOM.innerHTML="Brave player!!"
+    playSpan.style.display='none'
+
+    setTimeout(()=>{
+        dialogueDOM.innerHTML=""
+    },1500)
+}
+
+
+noTimerBtn.onclick=()=>{
+    playSpan.style.display='none'
+}
+

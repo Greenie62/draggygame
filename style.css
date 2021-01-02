@@ -48,6 +48,11 @@ body{
     border:1px solid black;
 }
 
+.headerh1{
+    background:linear-gradient(to right,lightgray,white);
+    border-radius:5%;
+}
+
 
 .puzzle1, .puzzle2, .puzzle3{
     background:black;
@@ -100,4 +105,25 @@ body{
     border-radius:25%;
     border:1px solid black;
     display:none;
+}
+
+
+.playSpan{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.playSpan > button{
+    background:red;
+    margin: 0px 5px;
+    cursor:pointer;
+    transition:1s ease;
+
+}
+
+
+.playSpan > button:hover{
+    opacity:.8
+
 }
